@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body style="background-color: aquamarine">
+    <form id="formulario">
+        <label>Nombre: </label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Digite su nombre" />
+        <br /><br />
+        <label>Apellido: </label>
+        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Digite su apellido" />
+        <br /><br />
+        <label>cedula: </label>
+        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Digite su cedula" />
+        <br /><br />
+        <label>telefono: </label>
+        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Digite su telefono" />
+        <br /><br />
+
+        <label>Direccion: </label>
+        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Digite su direccion" />
+        <br /><br />
+    </form>
+    <button class="btn btn-success">Guardar</button>
+    <div id="datos"></div>
+
+    <script>
+        const button = document.querySelector("button");
+        let datos = document.getElementById("datos");
+        let formulario = document.getElementById("formulario");
+
+        function obtenrDatos() {
+            datos.innerHTML = `<ul>
+  <li>
+    ${nombre.value}
+  </li>
+  <br>
+  <li>
+    ${apellido.value}
+  </li>
+  <br>
+  <li>
+    ${cedula.value}
+  </li>
+  <br>
+  <li>
+    ${telefono.value}
+  </li>
+  <br>
+  <li>
+    ${direccion.value}
+  </li>
+  <br>
+  </ul>`;
+        }
+        button.onclick = function() {
+            let nombre = document.getElementById("nombre").value;
+            let apellido = document.getElementById("apellido").value;
+            let cedula = document.getElementById("cedula").value;
+            let telefono = document.getElementById("telefono").value;
+            let direccion = document.getElementById("direccion").value;
+            alert("¡Hola " + nombre + " " + apellido + ", encantado de verte!");
+            console.log(nombre, apellido, cedula, telefono, direccion);
+            obtenrDatos();
+            formulario.style.display = "none";
+            button.style.display = "none";
+        };
+    </script>
+</body>
+
+</html>
